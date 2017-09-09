@@ -1,12 +1,18 @@
 package play_kotlin
 
-class Hello {
+class Hello(val words: Array<String>) {
     fun world() {
-        println(message = "Hello World")
+        if (words.isEmpty()) {
+            println("Hello World")
+        } else {
+            words.forEach {
+                println("Hello $it")
+            }
+        }
     }
 }
 
 fun main(argv: Array<String>) {
-    val hello = Hello()
+    val hello = Hello(argv)
     hello.world()
 }
